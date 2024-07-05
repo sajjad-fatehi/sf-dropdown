@@ -1,0 +1,15 @@
+/* Global Styles */
+@import "@/styles/_reset.scss";
+@import "@/styles/_fonts.scss";
+
+html,
+body,
+#root {
+	font-family: "lora", "Ostrich Sans";
+	font-style: normal;
+	height: 100%;
+}
+
+#root {
+	background-color: #f7f7f7;
+}

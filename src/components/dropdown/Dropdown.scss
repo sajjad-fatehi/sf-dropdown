@@ -1,0 +1,104 @@
+@import "@/styles/_variables.scss";
+
+.dropdown {
+  width: 350px;
+  max-width: 100%;
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 0.46rem;
+    cursor: pointer;
+
+    svg {
+      transition: all ease 0.2s;
+      color: $passive-color;
+      width: 32px;
+      height: 32px;
+      transform: rotate(180deg);
+    }
+    input::placeholder {
+      color: $passive-color;
+    }
+
+    input {
+      font-size: 1.2rem;
+      box-shadow: none;
+      border: none;
+      outline: none;
+      padding: 0.6rem;
+      width: 100%;
+    }
+  }
+
+  .item-container {
+    max-height: 300px;
+    overflow-y: auto;
+    transition: all ease 0.4s;
+    opacity: 0;
+    pointer-events: none;
+    background-color: white;
+    padding: 0.4rem;
+    border: 1px solid $border-color;
+    box-shadow: 0 0 4px $active-container-shadow;
+    border-radius: 0.6rem;
+    margin-top: 0.8rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      li {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all ease 0.2s;
+        button {
+          padding: 0.8rem 1.2rem;
+          font-size: 1.1rem;
+          background-color: transparent;
+          text-align: left;
+          width: 100%;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          color: inherit;
+        }
+
+        svg {
+          display: none;
+          color: $active-primary-color;
+          font-size: 1.6rem;
+          padding-right: 0.6rem;
+        }
+      }
+      li:hover,
+      li.selected {
+        background-color: $active-secondary-color;
+        color: $active-primary-color;
+        border-radius: 0.4rem;
+        svg {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.dropdown:focus-within {
+  .item-container {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  .input-container {
+    border-color: $active-primary-color;
+    box-shadow: 0 0 4px 2px $active-input-shadow;
+    svg {
+      transform: rotate(0deg);
+    }
+  }
+}

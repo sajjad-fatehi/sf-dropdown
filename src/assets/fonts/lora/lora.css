@@ -1,0 +1,11 @@
+/* Lora */
+
+@font-face {
+	font-family: 'lora';
+	src: url('lora-regular.ttf');
+}
+@font-face {
+	font-family: 'lora';
+	font-weight: bold;
+	src: url('lora-bold.ttf');
+}
